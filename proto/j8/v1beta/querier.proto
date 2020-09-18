@@ -3,6 +3,7 @@ package j8.j8.v1beta1;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
 // this line is used by starport scaffolding
+import "j8/v1beta/user.proto";
 
 
 option go_package = "github.com/j/j8/x/j8/types";
@@ -10,6 +11,15 @@ option go_package = "github.com/j/j8/x/j8/types";
 // Query defines the gRPC querier service.
 service Query {
     // this line is used by starport scaffolding # 2
+	rpc AllUser(QueryAllUserRequest) returns (QueryAllUserResponse);
 }
 
 // this line is used by starport scaffolding # 3
+message QueryAllUserRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllUserResponse {
+	repeated MsgUser user = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

@@ -22,5 +22,7 @@ func GetTxCmd() *cobra.Command {
 
     // this line is used by starport scaffolding
 
+	cmd.AddCommand(CmdCreateUser())
+
 	return cmd 
 }
