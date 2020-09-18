@@ -1,0 +1,9 @@
+syntax = "proto3";
+package j8.j8.v1beta1;
+
+option go_package = "github.com/j/j8/x/j8/types";
+
+// GenesisState defines the capability module's genesis state.
+message GenesisState {
+}
+
